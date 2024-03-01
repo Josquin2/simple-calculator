@@ -3,43 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <script src="/script/index.js"></script>
+    <title>Cal2</title>
+    <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/style.css">
+    <script src="/script/script.js"></script>
 </head>
 <body>
     <div>
-        <input class="input" type="text" id="answer">
+        <div>
+            <input type="input" class="input" id="screen">
+        </div>
+        <div>
+            <input type="button" id="AC" value="AC" class="num" onclick="clearScreen()">
+            <input type="button" id="undo" value="<=" class="num" onclick="deleteLastElement()">
+            <input type="button" id="percent" value="%" class="num" onclick="percent()">
+            <input type="button" id="/" value="/" class="cals" onclick="inputValue(value)">
+        </div>
+        <div>
+            <input type="button" value="7" class="num" onclick="inputValue(value)">
+            <input type="button" value="8" class="num" onclick="inputValue(value)">
+            <input type="button" value="9" class="num" onclick="inputValue(value)">
+            <input type="button" id="*" value="*" class="cals" onclick="inputValue(value)">
+        </div>
+        <div>
+            <input type="button" value="4" class="num" onclick="inputValue(value)">
+            <input type="button" value="5" class="num" onclick="inputValue(value)">
+            <input type="button" value="6" class="num" onclick="inputValue(value)">
+            <input type="button" id="-" value="-" class="cals" onclick="inputValue(value)">
+        </div>
+        <div>
+            <input type="button" value="1" class="num" onclick="inputValue(value)">
+            <input type="button" value="2" class="num" onclick="inputValue(value)">
+            <input type="button" value="3" class="num" onclick="inputValue(value)">
+            <input type="button" id="+" value="+" class="cals" onclick="inputValue(value)">
+        </div>
+        <div>
+            <input type="button" value="0" class="zero" onclick="inputValue(value)">
+            <input type="button" id="point" value="." class="num" onclick="inputValue(value)">
+            <input type="button" value="=" class="cals" onclick="calculation(first)">
+        </div>
+        
     </div>
-    <div>
-        <button class="num" onclick="clearAnswer()">AC</button>
-        <button class="num" onclick="undo()"><=</button>
-        <button class="num" onclick="percent()">%</button>
-        <button class="cals" id="/" onclick="calInput('/')">/</button>
-    </div>
-    <div>
-        <button class="num" id="7" onclick="calInput(7)">7</button>
-        <button class="num" id="8" onclick="calInput(8)">8</button>
-        <button class="num" id="9" onclick="calInput(9)">9</button>
-        <button class="cals" id="*" onclick="calInput('*')">*</button>
-    </div>
-    <div>
-        <button class="num" id="4" onclick="calInput(4)">4</button>
-        <button class="num" id="5" onclick="calInput(5)">5</button>
-        <button class="num" id="6" onclick="calInput(6)">6</button>
-        <button class="cals" id="-" onclick="calInput('-')">-</button>
-    </div>
-    <div>
-        <button class="num" id="1" onclick="calInput(1)">1</button>
-        <button class="num" id="2" onclick="calInput(2)">2</button>
-        <button class="num" id="3" onclick="calInput(3)">3</button>
-        <button class="cals" id="+" onclick="calInput('+')">+</button>
-    </div>
-    <div>
-        <button class="zero" id="0" onclick="calInput(0)">0</button>
-        <button class="num" id="." onclick="calInput('.')">.</button>
-        <button class="cals" onclick="calculation()">=</button>
-    </div>
-    
 </body>
 </html>

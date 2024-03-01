@@ -1,30 +1,75 @@
+let first = '';
 
-function calInput(n){
-    let value = document.getElementById(n).id;
-    document.getElementById('answer').value += value;
+function inputValue(value){
+    let currentVal = document.getElementById('screen').value;
+    if (value === '*'||
+        value === '/'||
+        value === '+'||
+        value === '-'
+    ){
+        updateInt(currentVal, value)
+    }
+    else{
+        originalColors();
+        
+        if (value == '.'){
+            if (!(currentVal.toString().includes('.')) && (currentVal.toString().length > 0)){
+                document.getElementById('screen').value += value;
+            }
+        }
+        else{
+            document.getElementById('screen').value += value;
+        }
+    }
+    
 }
 
-function clearAnswer(){
-    document.getElementById('answer').value = ''
-}
-
-function calculation(){
-    // doing calculations
-    let result = eval(document.getElementById('answer').value);
-    if (result != undefined){
-        document.getElementById('answer').value = result;
+function deleteLastElement(){
+    let value = document.getElementById('screen').value;
+    if (value.length == 1){
+        document.getElementById('screen').value = '';
+    }
+    else{
+        document.getElementById('screen').value = value.toString().slice(0, value.length - 1)
     }
 }
 
-function undo(){
-    // deleting last element
-    document.getElementById('answer').value = Math.floor(document.getElementById('answer').value / 10) ;
+function clearScreen(){
+    document.getElementById('screen').value = '';
+    originalColors();
+    return first = '';
+
 }
 
 function percent(){
-    // finding % of element
-    let ans = document.getElementById('answer').value;
+    let ans = document.getElementById('screen').value;
     ans = ans + '/100';
-    let result = eval(ans);
-    document.getElementById('answer').value = result;
+    if (ans.toString().length > 0){
+        let result = eval(ans);
+        document.getElementById('screen').value = result;
+    }
+    
 }
+function calculation(first){
+    let screen = document.getElementById('screen').value;
+    let vir = first + screen;
+    document.getElementById('screen').value = eval(vir);
+}
+
+
+function updateInt(firstValue, znak){
+    originalColors();
+    document.getElementById(znak).classList.add('pressed');
+    firstValue += document.getElementById(znak).value;
+    document.getElementById('screen').value = '';
+    return first = firstValue;
+    
+}
+
+function originalColors(){
+    document.getElementById('/').classList = 'cals';
+    document.getElementById('*').classList = 'cals';
+    document.getElementById('+').classList = 'cals';
+    document.getElementById('-').classList = 'cals';
+}
+// let a = setTimeout(()=>alert(first), 5000)

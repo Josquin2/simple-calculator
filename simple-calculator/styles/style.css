@@ -1,34 +1,40 @@
 .num{
-    background-color: rgb(185, 185, 185);
+    background-color: rgb(210, 210, 210);
     border-width: 0.2;
     width:80px;
     height:80px;
-    border-radius: 10%;
+    border-radius: 10px;
     font-size: xx-large;
-    
+    margin: 1px;
     
 }
 .zero{
-    width: 160px;
+    width: 165px;
     height: 80px;
-    border-radius: 10%;
+    border-radius: 10px;
     border-width: 0.2;
-    background-color: rgb(185, 185, 185);
+    background-color: rgb(210, 210, 210);
     font-size: xx-large;
+    margin: 1px;
 }
 
 .cals{
-    background-color: orange;
+    background-color: rgb(255, 181, 44);
     border-width: 0.2;
     width:80px;
     height:80px;
-    border-radius: 10%;
+    border-radius: 10px;
     font-size: xx-large;
+    margin: 1px;
 }
 .input{
-    width: 320px;
+    width: 330px;
     height: 80px;
-    border-radius: 10%;
+    border-radius: 10px;
     font-size:xx-large;
-    background-color: rgb(221, 221, 221);
+    background-color: rgb(210, 210, 210);
+}
+
+.pressed{
+    background-color: rgb(175, 141, 78);
 }
