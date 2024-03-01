@@ -53,16 +53,38 @@ function percent(){
 function calculation(first){
     let screen = document.getElementById('screen').value;
     let vir = first + screen;
-    document.getElementById('screen').value = eval(vir);
+    if (eval(vir) != undefined){
+        document.getElementById('screen').value = eval(vir);
+    }
+    else {
+        document.getElementById('screen').value = 'Error!'
+    }
+    
 }
 
 
 function updateInt(firstValue, znak){
-    originalColors();
-    document.getElementById(znak).classList.add('pressed');
-    firstValue += document.getElementById(znak).value;
-    document.getElementById('screen').value = '';
-    return first = firstValue;
+    let alo = first.toString()[first.toString().length - 1]
+    if (alo == '/'||
+        alo == '*'||
+        alo == '+'||
+        alo == '-'
+    ){
+        firstValue = first.slice(0, first.length - 1);
+        firstValue += document.getElementById(znak).value;
+        originalColors();
+        document.getElementById(znak).classList.add('pressed');
+        document.getElementById('screen').value = '';
+        return first = firstValue;
+    }
+    else{
+        originalColors();
+        document.getElementById(znak).classList.add('pressed');
+        firstValue += document.getElementById(znak).value;
+        document.getElementById('screen').value = '';
+        return first = firstValue;
+    }
+    
     
 }
 
@@ -72,4 +94,3 @@ function originalColors(){
     document.getElementById('+').classList = 'cals';
     document.getElementById('-').classList = 'cals';
 }
-// let a = setTimeout(()=>alert(first), 5000)
